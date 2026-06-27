@@ -1,4 +1,5 @@
-import { findJobById, findJobs } from "../queries/jobs";
+import { findCompanyById } from "../queries/companies.js";
+import { findJobById, findJobs } from "../queries/jobs.js";
 
 export const resolvers = {
   Query: {
@@ -7,14 +8,10 @@ export const resolvers = {
   },
 
   Job: {
-    company: () => {
-      return {
-        id: 1,
-        city: "Lviv",
-        bio: "wdqwq",
-        name: "qdwdw",
-        staffMembers: 100,
-      };
-    },
+    company: (parent) => findCompanyById(parent.company_id),
+  },
+
+  Company: {
+    staffMembers: (parent) => parent.staff_members,
   },
 };
