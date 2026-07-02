@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter";
+}
+
+@layer base {
+  body {
+    @apply font-inter bg-gray-50;
+  }
+}
