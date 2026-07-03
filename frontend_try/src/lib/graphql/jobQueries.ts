@@ -1,7 +1,7 @@
-import type { TGetJobsQuery } from "@/utils/types";
+import type { TGetVacanciesQuery } from "@/utils/types";
 import { gql, type TypedDocumentNode } from "@apollo/client";
 
-export const GET_JOBS: TypedDocumentNode<TGetJobsQuery, void> = gql`
+export const GET_JOBS: TypedDocumentNode<TGetVacanciesQuery, void> = gql`
   query GET_JOBS {
     jobs {
       id
