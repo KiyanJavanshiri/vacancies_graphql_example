@@ -1,4 +1,4 @@
-import { findCompanyById } from "../queries/companies.js";
+import { findCompanyById, findAllJobs } from "../queries/companies.js";
 import { findJobById, findJobs } from "../queries/jobs.js";
 
 export const resolvers = {
@@ -13,5 +13,6 @@ export const resolvers = {
 
   Company: {
     staffMembers: (parent) => parent.staff_members,
+    jobs: (parent) => findAllJobs(parent.id),
   },
 };

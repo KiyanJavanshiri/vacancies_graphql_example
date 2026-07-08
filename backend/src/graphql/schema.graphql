@@ -3,6 +3,7 @@ type Company {
   name: String!
   bio: String!
   staffMembers: Int!
+  jobs: [Job!]!
 }
 
 type Job {
@@ -15,6 +16,7 @@ type Job {
 }
 
 type Query {
-    job(id: ID!): Job
-    jobs: [Job!]!
+  job(id: ID!): Job
+  jobs: [Job!]!
+  company(id: ID!): Company
 }
